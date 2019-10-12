@@ -39,5 +39,5 @@ interface BL {
   setPage: (page: string, sendPv?: boolean) => void;
 }
 
-type ArmsCreator = (pid: string, option: Extend) => BL;
-export default ArmsCreator;
+declare const ArmsCreator: (pid: string, option?: Extend) => BL;
+export = ArmsCreator;
