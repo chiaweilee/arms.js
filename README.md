@@ -23,6 +23,14 @@ bl.sum( /* argv */ );
 export default bl;
 ```
 
+## Env
+
+```js
+// default to 'production'
+arms('arms pid', { env: 'production' });
+arms('arms pid', { env: ['development', 'production'] });
+```
+
 ## Docs
 
 [开通 ARMS](https://helpcdn.aliyun.com/document_detail/65257.html)
