@@ -1,6 +1,6 @@
 {
   "name": "arms.js",
-  "version": "0.0.0-beta.2",
+  "version": "1.0.0-beta.1",
   "description": "Alibaba Cloud Application Real-Time Monitoring Service (ARMS).",
   "scripts": {
     "prepublishOnly": "npm run build",
@@ -47,7 +47,7 @@
     "lint-staged": "^7.2.2",
     "np": "^3.0.4",
     "prettier": "^1.18.2",
-    "tslint": "^5.18.0",
+    "tslint": "^5.20.0",
     "tslint-config-ali": "^0.2.4",
     "tslint-config-prettier": "^1.18.0",
     "tslint-eslint-rules": "^5.4.0",

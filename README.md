@@ -15,21 +15,18 @@ npm install arms.js --save
 ```js
 import arms from 'arms.js';
 
-const bl = arms('arms pid', { /* arms option */ });
+const __bl = arms({ pid: 'your pid', active: process.env.NODE_ENV === 'production' });
 
-bl.api( /* argv */ );
-bl.sum( /* argv */ );
-
-export default bl;
+__bl.api( /* argv */ );
+__bl.sum( /* argv */ );
 ```
 
-## Env
+## Option
 
-```js
-// default to 'production'
-arms('arms pid', { env: 'production' });
-arms('arms pid', { env: ['development', 'production'] });
-```
+- `pid` string, required.
+- `active` boolean, default `process.env.NODE_ENV === 'production'`
+
+*check docs for more options*
 
 ## Docs
 

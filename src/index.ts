@@ -1,11 +1,10 @@
 const defaultOption: any = {
-  env: 'production',
-  option: {
-    imgUrl: 'https://arms-retcode.aliyuncs.com/r.png?',
-  },
+  active: process.env.NODE_ENV === 'production',
+  imgUrl: 'https://arms-retcode.aliyuncs.com/r.png?',
 };
 
-class Faker {
+// faker Bl
+class Bl {
   static api(..._: any) {}
   static error(..._: any) {}
   static sum(..._: any) {}
@@ -14,30 +13,14 @@ class Faker {
   static setPage(..._: any) {}
 }
 
-export default function(pid: string, option: object) {
+export default function(option: object) {
   // merge option
-  const opt = Object.assign({}, defaultOption, option);
+  const { active, prePipe, ...opt } = Object.assign({}, defaultOption, option);
 
-  // env
-  const env = opt.env;
-  if (typeof env === 'string') {
-    if (env !== process.env.NODE_ENV) {
-      return Faker;
-    }
-  } else if (Array.isArray(env)) {
-    if (env.indexOf(process.env.NODE_ENV) === -1) {
-      return Faker;
-    }
-  } else {
-    return Faker;
+  if (!active) {
+    return Bl;
   }
 
   // create
-  return require('alife-logger').singleton(
-    {
-      pid,
-      ...opt.option,
-    },
-    opt.prePipe,
-  );
+  return require('alife-logger').singleton(opt, prePipe);
 }

@@ -1,10 +1,7 @@
-interface Extend {
-  env?: string | string[];
-  option?: Option;
-  prePipe?: any[];
-}
-
 interface Option {
+  active: boolean;
+  prePipe?: any[];
+  pid: string;
   imgUrl?: string;
   uid?: string;
   tag?: string;
@@ -39,5 +36,5 @@ interface BL {
   setPage: (page: string, sendPv?: boolean) => void;
 }
 
-declare const ArmsCreator: (pid: string, option?: Extend) => BL;
+declare const ArmsCreator: (option: Option) => BL;
 export = ArmsCreator;
