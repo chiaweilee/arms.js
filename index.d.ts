@@ -1,5 +1,5 @@
 interface Option {
-  active: boolean;
+  active?: boolean;
   prePipe?: any[];
   pid: string;
   imgUrl?: string;
