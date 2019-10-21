@@ -5,12 +5,28 @@ const defaultOption: any = {
 
 // faker Bl
 class Bl {
-  static api(..._: any) {}
-  static error(..._: any) {}
-  static sum(..._: any) {}
-  static avg(..._: any) {}
-  static setConfig(..._: any) {}
-  static setPage(..._: any) {}
+  static api(..._: any) {
+    debug('api', _);
+  }
+  static error(..._: any) {
+    debug('error', _);
+  }
+  static sum(..._: any) {
+    debug('sum', _);
+  }
+  static avg(..._: any) {
+    debug('avg', _);
+  }
+  static setConfig(..._: any) {
+    debug('setConfig', _);
+  }
+  static setPage(..._: any) {
+    debug('setPage', _);
+  }
+}
+
+function debug(fn: string, argv?: any[]) {
+  console.log(`[arms] ${fn}(${argv.join(', ')})`);
 }
 
 export default function(option: object) {
